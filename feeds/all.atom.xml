@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ilya's DevOps</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2040-12-03T10:20:00+08:00</updated><entry><title>My second post</title><link href="/my-second-post.html" rel="alternate"></link><published>2040-12-03T10:20:00+08:00</published><updated>2040-12-03T10:20:00+08:00</updated><author><name>Ilya Mochalov</name></author><id>tag:None,2040-12-03:/my-second-post.html</id><summary type="html">&lt;ul&gt;
-&lt;li&gt;wgw4g&lt;/li&gt;
-&lt;li&gt;gwgw&lt;/li&gt;
-&lt;li&gt;gwgwgw&lt;/li&gt;
-&lt;/ul&gt;</summary><content type="html">&lt;ul&gt;
-&lt;li&gt;wgw4g&lt;/li&gt;
-&lt;li&gt;gwgw&lt;/li&gt;
-&lt;li&gt;gwgwgw&lt;/li&gt;
-&lt;/ul&gt;</content></entry><entry><title>My very first post</title><link href="/my-very-first-post.html" rel="alternate"></link><published>2017-06-28T22:01:00+08:00</published><updated>2017-06-28T22:01:00+08:00</updated><author><name>Ilya Mochalov</name></author><id>tag:None,2017-06-28:/my-very-first-post.html</id><summary type="html">&lt;h1&gt;My very first blog post. Motivation.&lt;/h1&gt;
-&lt;p&gt;I am both excited and thrilled to start this blog. This would be my first bogging experience. Main motivation for starting this project is to share my technical experience dealing with various IT tools that I use at work and as hobby.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ilya's DevOps and more</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2017-06-28T22:01:00+08:00</updated><entry><title>My very first post</title><link href="/my-very-first-post.html" rel="alternate"></link><published>2017-06-28T22:01:00+08:00</published><updated>2017-06-28T22:01:00+08:00</updated><author><name>Ilya Mochalov</name></author><id>tag:None,2017-06-28:/my-very-first-post.html</id><summary type="html">&lt;h1&gt;My very first blog post. Motivation.&lt;/h1&gt;
+&lt;p&gt;I am both excited and thrilled to start this blog. This would be my first blogging experience. Main motivation for starting this project is to share my technical experience dealing with various IT tools that I use at work and as hobby.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;“You should …&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</summary><content type="html">&lt;h1&gt;My very first blog post. Motivation.&lt;/h1&gt;
-&lt;p&gt;I am both excited and thrilled to start this blog. This would be my first bogging experience. Main motivation for starting this project is to share my technical experience dealing with various IT tools that I use at work and as hobby.&lt;/p&gt;
+&lt;p&gt;I am both excited and thrilled to start this blog. This would be my first blogging experience. Main motivation for starting this project is to share my technical experience dealing with various IT tools that I use at work and as hobby.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;“You should never take more than you give”&lt;/strong&gt; (The Lion King - "Circle of Life” soundtrack)&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;This one of my best quotes and I try to live in accordance. So, writing this blog I want to make my contribution to IT community online as well as, I am looking for feedback from my readers.&lt;/p&gt;</content></entry></feed>
+&lt;p&gt;This one of my best quotes and I try to live in accordance. So, writing this blog I want to make my contribution to IT community online as well as, I am looking for feedback from my readers.&lt;/p&gt;</content><category term="general"></category></entry></feed>
