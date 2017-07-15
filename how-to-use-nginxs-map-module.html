@@ -2,14 +2,15 @@
 <html lang="en">
 
 <head>
-        <meta charset="utf-8">
+            <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-        <title>Ilya's code and more - Archives</title>
+        <title>How to Use Nginx's map Module</title>
 
             <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ilya's code and more Full Atom Feed" />
+            <link href="/feeds/general.atom.xml" type="application/atom+xml" rel="alternate" title="Ilya's code and more Categories Atom Feed" />
         <!-- Bootstrap Core CSS -->
         <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
 
@@ -32,8 +33,25 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-                <meta property="og:locale" content="">
+
+
+        <meta name="description" content="How to Use Nginx's map Module. Sometimes we need to redirect old URI of our web service to new URI, without changing our legacy...">
+
+        <meta name="author" content="Ilya Mochalov">
+
+        <meta name="tags" content="nginx">
+
+	                <meta property="og:locale" content="">
 		<meta property="og:site_name" content="Ilya's code and more">
+
+	<meta property="og:type" content="article">
+            <meta property="article:author" content="/author/ilya-mochalov.html">
+	<meta property="og:url" content="/how-to-use-nginxs-map-module.html">
+	<meta property="og:title" content="How to Use Nginx's map Module">
+	<meta property="article:published_time" content="2017-07-13 15:00:00+08:00">
+            <meta property="og:description" content="How to Use Nginx's map Module. Sometimes we need to redirect old URI of our web service to new URI, without changing our legacy...">
+
+            <meta property="og:image" content="/theme/images/post-bg.jpg">
 </head>
 
 <body>
@@ -66,12 +84,16 @@
     </nav>
 
     <!-- Page Header -->
-        <header class="intro-header" style="background-image: url('/theme/images/home-bg.jpg')">
+        <header class="intro-header" style="background-image: url('/theme/images/post-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Archives for Ilya's code and more</h1>
+                        <h1>How to Use Nginx's map Module</h1>
+                        <span class="meta">Posted 
+                             on Thu 13 July 2017
+                        </span>
+                        
                     </div>
                 </div>
             </div>
@@ -82,13 +104,68 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    <dl>
-            <dt>Thu 13 July 2017</dt>
-            <dd><a href="/how-to-use-nginxs-map-module.html">How to Use Nginx's map Module</a></dd>
-            <dt>Wed 28 June 2017</dt>
-            <dd><a href="/my-very-first-post.html">My very first post</a></dd>
-        <hr>
-    </dl>
+    <!-- Post Content -->
+    <article>
+        <h1>How to Use Nginx's map Module.</h1>
+<p>Sometimes we need to redirect old URI of our web service to new URI, without changing our legacy frontend. I will walk you through Nginx's map Module that can be used to achieve our goal.</p>
+<h2>Step 1 – Creating map file</h2>
+<p>Create file called uri_map at root folder (<em>/etc/nginx/uri_map</em>) of Nginx and fill it in with:</p>
+<div class="highlight"><pre><span></span>/old/uri1   /new/uri1;
+…
+/old/uriX   /new/uriX;
+</pre></div>
+
+
+<p>where two pars represent old and new URI, separated with TAB.</p>
+<h2>Step 2 – Edit configuration file</h2>
+<p>Include following text at the top of your nginx.conf configuration file:</p>
+<div class="highlight"><pre><span></span>map $uri $new_uri {
+    include /etc/nginx/uri_map;
+}
+</pre></div>
+
+
+<p>and following text to server block:</p>
+<div class="highlight"><pre><span></span>server {
+    listen 80;
+    server_name XXX;
+    ...
+    # Old static views redirect
+    if ($new_uri) {
+        rewrite ^ $new_uri permanent;
+    }
+    ...
+}
+</pre></div>
+
+
+<h2>Step 3 - Reload nginx</h2>
+<p>Use follwoing command to reload nginx configurations:</p>
+<div class="highlight"><pre><span></span>$ sudo systemctl reload nginx.service
+</pre></div>
+
+
+<p>Check if redirection works with:</p>
+<div class="highlight"><pre><span></span>$ curl -I domain.name.com
+HTTP/1.1 <span class="m">301</span> Moved Permanently
+Server: nginx/1.10.3
+Date: Sat, <span class="m">15</span> Jul <span class="m">2017</span> <span class="m">05</span>:18:55 GMT
+Content-Type: text/html
+Content-Length: <span class="m">185</span>
+Connection: keep-alive
+Location: https://domain.name.com
+</pre></div>
+
+
+<p>Happy codding</p>
+    </article>
+
+        <div class="tags">
+            <p>tags: <a href="/tag/nginx.html">nginx</a></p>
+        </div>
+
+    <hr>
+
             </div>
         </div>
     </div>
