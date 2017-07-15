@@ -146,14 +146,14 @@
 
 
 <p>Check if redirection works with:</p>
-<div class="highlight"><pre><span></span>$ curl -I domain.name.com
+<div class="highlight"><pre><span></span>$ curl -I domain.name.com/old/uri
 HTTP/1.1 <span class="m">301</span> Moved Permanently
 Server: nginx/1.10.3
 Date: Sat, <span class="m">15</span> Jul <span class="m">2017</span> <span class="m">05</span>:18:55 GMT
 Content-Type: text/html
 Content-Length: <span class="m">185</span>
 Connection: keep-alive
-Location: https://domain.name.com
+Location: https://domain.name.com/old/uri1
 </pre></div>
 
 

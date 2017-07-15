@@ -42,14 +42,14 @@
 
 
 &lt;p&gt;Check if redirection works with:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ curl -I domain.name.com
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ curl -I domain.name.com/old/uri
 HTTP/1.1 &lt;span class="m"&gt;301&lt;/span&gt; Moved Permanently
 Server: nginx/1.10.3
 Date: Sat, &lt;span class="m"&gt;15&lt;/span&gt; Jul &lt;span class="m"&gt;2017&lt;/span&gt; &lt;span class="m"&gt;05&lt;/span&gt;:18:55 GMT
 Content-Type: text/html
 Content-Length: &lt;span class="m"&gt;185&lt;/span&gt;
 Connection: keep-alive
-Location: https://domain.name.com
+Location: https://domain.name.com/old/uri1
 &lt;/pre&gt;&lt;/div&gt;
 
 
